@@ -28,7 +28,7 @@ function ShoppingList({ items }) {
 
   const searchResult = itemsToDisplay.filter((item) => {
     if (searchInput === "") return true;
-    return item.name === searchInput;
+    return item.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
   return (
