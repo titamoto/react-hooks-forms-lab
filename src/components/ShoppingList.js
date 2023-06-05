@@ -20,7 +20,7 @@ function ShoppingList({ items }) {
     setSelectedCategory(event.target.value);
   }
 
-  const itemsToDisplay = items.filter((item) => {
+  const itemsToDisplay = itemList.filter((item) => {
     if (selectedCategory === "All") return true;
 
     return item.category === selectedCategory;

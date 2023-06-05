@@ -5,8 +5,6 @@ function ItemForm({ onItemFormSubmit }) {
   const [itemName, setItemName] = useState("");
   const [itemCategory, setItemCategory] = useState("Produce");
 
-  //const [newItems, setNewItems] = useState([]);
-
   function handleNameInput(event) {
     setItemName(event.target.value);
   }
@@ -17,13 +15,14 @@ function ItemForm({ onItemFormSubmit }) {
 
   function handleSubmit(event) {
     event.preventDefault();
+    setItemCategory("Produce");
+    setItemName("");
     const newItem = {
       id: uuid(),
       name: itemName,
       category: itemCategory,
     };
-    setItemCategory("Produce");
-    setItemName("");
+
     onItemFormSubmit(newItem);
   }
 
